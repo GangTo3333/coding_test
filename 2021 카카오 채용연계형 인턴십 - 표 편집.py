@@ -58,9 +58,10 @@ def solution(n, k, cmd):
                     start = table[start][2]
 
     answer = ['O'] * n
-    # 삭제 된 데이터를 이용하여
     for i in delete:
         answer[i[1]] = 'X'
+
+    return "".join(answer)
 
     ''' remove 와 insert 를 사용하면 쉽게 해결할 수 있는 문제.
         그러나 두 함수는 리스트를 순회하며 삭제할 값이나, 삽입할 위치를 찾고, 이후 뒤의 모든 원소를 한 칸씩 당기거나 미루기에 
@@ -74,5 +75,3 @@ def solution(n, k, cmd):
         
         class 함수를 사용하여 조금 더 입체적인 구현을 할 수 있었으면 조금 더 깔끔한 풀이가 되었을 것 같다는 생각.
         이후에 class 함수를 공부하고 난 뒤, class 함수를 활용해 볼 것.'''
-
-    return "".join(answer)
