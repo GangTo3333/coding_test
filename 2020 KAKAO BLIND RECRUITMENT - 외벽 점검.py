@@ -13,7 +13,7 @@ def solution(n, weak, dist):
     # 원형의 벽면. 한 바퀴를 돌았을 경우를 접근하기 쉽게 list 확장.
     circle = weak + list(map(lambda x: x+n, weak))
 
-    # 취약점을 한 명이 전부 확인할 수 있는지 시작과 끝을 이은 거리 확인.
+    # 취약점을 한 명이 전부 확인할 수 있는지 확인.
     for i in range(end):
         work = dist[0]
 
@@ -38,7 +38,7 @@ def solution(n, weak, dist):
             while deq:
                 start = deq.popleft()
 
-                # 배치 할 일꾼이 남아 있을 시: 시작점 부터 다음 배치 지역 한 개 전까지 확인.
+                # 배치 할 일꾼이 남아 있을 시: 시작점 부터 다음 배치 지역 전의 취약점까지 확인.
                 if deq:
                     area = circle[start:deq[0]]
 
