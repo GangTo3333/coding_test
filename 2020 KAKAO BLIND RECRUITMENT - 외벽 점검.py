@@ -4,7 +4,7 @@ from itertools import combinations
 from collections import deque
 
 def solution(n, weak, dist):
-    # 확인해야 하는 취약점 갯수.
+    # 확인해야 하는 취약점 개수.
     end = len(weak)
 
     # 일꾼을 거리의 역순으로 배치하여 각 명수별 최대 효율을 가져오기 위함.
