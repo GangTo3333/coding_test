@@ -1,13 +1,13 @@
 # 2023 KAKAO BLIND RECRUITMENT - 미로 탈출 명령어
 
-def solution(n, m, x, y, r, c, k):
+def solution(n, m, x, y, q, c, k):
     # 키 조작의 우선 순위가 d-l-r-u 이므로 (n * m) 의 격자 규격 내에서 d 와 l 방향으로 최대한 많이 이동.
     d = abs(n - x)
     l = abs(1 - y)
 
     # 이후 (n, 1) 위치에서 도착지점으로 이동.
     r = abs(1 - c)
-    u = abs(n - r)
+    u = abs(n - q)
 
     # (n, 1)을 지나칠 때 최소 이동 거리 move. (n, 1)을 지나가는 경로가 사전 순으로 가장 앞에 위치함.
     move = d + l + r + u
@@ -24,6 +24,8 @@ def solution(n, m, x, y, r, c, k):
     # (n, 1)을 지나가는 경로(사전 순으로 가장 앞에 위치) 가 움직이는 횟수 k보다 적으면 남은 횟수 만큼 'rl' 과 'ud'로 반복.
     elif move < k:
         k -= move
+
+        # 격자의 최소 범위가 (2*2) 이므로 'ud'로 반복하는 경우는 생각하지 않아도 됨.
         if m != 1:
             return 'd' * d + 'l' * l + 'rl' * (k // 2) + 'r' * r + 'u' * u
         else:
