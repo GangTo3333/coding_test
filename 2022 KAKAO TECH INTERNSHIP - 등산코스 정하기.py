@@ -41,7 +41,7 @@ def solution(n, paths, gates, summits):
                 else:
                     bfs.append((x, i))
 
-            # 다음 위치로 가는 각각의 경로 중 더 짧은 '가장 긴 거리' 가 있을 경우 탐색 중지.
+            # 다음 위치로 가는 각각의 경로 중 '가장 긴 거리' 가 더 짧을 경우 탐색 중지.
             else:
                 continue
 
