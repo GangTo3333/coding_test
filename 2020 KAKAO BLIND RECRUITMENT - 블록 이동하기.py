@@ -23,7 +23,7 @@ def solution(board):
             qc, qr = c + dy[i], r + dx[i]
 
             # 지도를 넘어가는 경우는 생각하지 않음.
-            if size in {qy, qx, qc, qr} or -1 in {qy, qx, qc, qr}:
+            if {size, -1} & {qy, qx, qc, qr}:
                 continue
 
             # 경로에 벽이 없는지 혹은, 최단경로가 맞는지 확인.
