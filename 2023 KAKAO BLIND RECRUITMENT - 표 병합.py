@@ -115,7 +115,7 @@ def solution(commands):
     answer = []
 
     for command in commands:
-        command = command.split(' ')
+        command = command.split()
         order = command[0]
 
         if order == "UPDATE":
@@ -136,4 +136,4 @@ def solution(commands):
 ''' 단순 구현 문제였으나 수많은 조건과 고려해야하는 예외 사항들이 많아 곤란했던 문제.
     UPDATE value1 value2 에서 value1 = value2 의 경우를 차마 생각하지 못 해 많은 시간 소요.
     
-    예외 사항이 제시되지 않으면 모든 경우의 수를 고려할 것.'''
+    예외 사항이 제시되지 않으면 모든 경우를 고려할 것.'''
